@@ -51,3 +51,13 @@ model.fit(train_images, train_labels, epochs=10, batch_size=64, validation_split
 # Evaluate the model
 test_loss, test_acc = model.evaluate(test_images, test_labels)
 print("Test accuracy: ", test_acc)
+
+# Save the model
+model.save("model.h5")
+
+# Load the model
+from keras.models import load_model
+model = load_model("model.h5")
+
+# # Use the model for prediction
+# y_pred = model.predict(x_test)
